@@ -41,6 +41,7 @@
             android:name=".TpActivity"
             android:exported="true"
             android:label="@string/label_tp">
+
             <!-- (le bloc intent-filter MAIN / LAUNCHER se colle ici) -->
         </activity>
 

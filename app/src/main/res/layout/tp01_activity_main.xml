@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TP S01 — MainActivity : à vous de jouer"
-        android:textSize="20sp" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/tp01_logo_alamal"
+            android:contentDescription="@string/tp01_logo_description" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tp01_titre"
+            android:textColor="@color/tp01_vert_alamal"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tp01_horaires"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="@string/tp01_tarif"
+            android:textColor="@color/tp01_gris_texte"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autoLink="web|phone|email"
+            android:background="@drawable/tp01_fond_carte"
+            android:padding="16dp"
+            android:text="@string/tp01_contact"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/tp01_hint_prenom"
+            android:inputType="textPersonName"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btnEntrer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tp01_btn_entrer"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtSalut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textColor="@color/tp01_vert_fonce"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNouveau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/s01_ic_ajouter"
+            android:contentDescription="Nouveau client"
+            app:fabSize="normal"/>
+
+    </LinearLayout>
+</ScrollView>

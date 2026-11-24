@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Playground : écrivez ici le layout des exemples du cours -->
+<?xml version="1.0" encoding="utf-8"?><!-- Playground : écrivez ici le layout des exemples du cours -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,31 +8,49 @@
     android:padding="16dp"
     tools:context=".PlaygroundActivity">
 
-    <CheckBox
-        android:id="@+id/chkImpression"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Impression"
-        android:textSize="22sp"/>
-    <CheckBox
-        android:id="@+id/chkCasque"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Casque audio"
-        android:textSize="22sp"/>
-    <CheckBox
-        android:id="@+id/chkScanner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scanner"
-        android:textSize="22sp"/>
-    <Button
-        android:id="@+id/btnCalculer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculer"/>
+<!--    <CheckBox-->
+<!--        android:id="@+id/chkImpression"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Impression"-->
+<!--        android:textSize="22sp" />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/chkCasque"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Casque audio"-->
+<!--        android:textSize="22sp" />-->
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/chkScanner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Scanner"-->
+<!--        android:textSize="22sp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnCalculer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Calculer" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtResultat"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content" />-->
     <TextView
-        android:id="@+id/txtResultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forfait"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+    <RadioButton
+        android:id="@+id/grpForfait"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <RadioButton
+        android:id="@+id/rad30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 </LinearLayout>

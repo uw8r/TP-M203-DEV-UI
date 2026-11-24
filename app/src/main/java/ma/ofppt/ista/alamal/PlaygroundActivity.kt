@@ -6,7 +6,10 @@ import android.widget.CheckBox
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.materialswitch.MaterialSwitch
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
 // Écrivez le layout dans res/layout/activity_playground.xml et le code Kotlin ci-dessous, dans onCreate.
@@ -16,16 +19,22 @@ class PlaygroundActivity : AppCompatActivity() {
         setContentView(R.layout.activity_playground)
 
         // Votre code ici
-        val group = findViewById<RadioGroup>(R.id.grpForfait)
-        val rad30 = findViewById<RadioButton>(R.id.rad30)
-        val rad60 = findViewById<RadioButton>(R.id.rad60)
-        val rad120 = findViewById<RadioButton>(R.id.rad120)
-        val total = findViewById<TextView>(R.id.total)
-        group.setOnCheckedChangeListener { group, i ->
-            when (i) {
-                R.id.rad30 -> total.text = "A payer : 6DH"
-                R.id.rad60 -> total.text = "A payer : 10DH"
-                R.id.rad120 -> total.text = "A payer : 18DH"
+        val tglClim = findViewById<ToggleButton>(R.id.tglClim)
+        val swSilence = findViewById<MaterialSwitch>(R.id.swSilence)
+        val txtEtat = findViewById<TextView>(R.id.txtEtat)
+        tglClim.setOnCheckedChangeListener { _, bool ->
+            if (bool) {
+                txtEtat.text = "Clim ON !!"
+            } else {
+                txtEtat.text = "Clim OFF !!"
+            }
+        }
+
+        swSilence.setOnCheckedChangeListener { _, bool ->
+            if (bool) {
+                txtEtat.text = "Mode silencieux ON !!"
+            } else {
+                txtEtat.text = "Mode silencieux OFF !!"
             }
         }
 

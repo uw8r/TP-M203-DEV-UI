@@ -39,18 +39,44 @@
 <!--        android:id="@+id/txtResultat"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content" />-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forfait"
         android:textSize="24sp"
-        android:textStyle="bold"/>
-    <RadioButton
+        android:textStyle="bold"
+        />
+    <RadioGroup
         android:id="@+id/grpForfait"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <RadioButton
-        android:id="@+id/rad30"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rad30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 min: 6DH"
+            android:textSize="22sp"
+            />
+        <RadioButton
+            android:id="@+id/rad60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Heure: 10DH"
+            android:textSize="22sp"
+            />
+        <RadioButton
+            android:id="@+id/rad120"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 heures : 18 DH"
+            android:textSize="22sp"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Choisissez un forfait"
+        android:textSize="22sp"/>
+
 </LinearLayout>

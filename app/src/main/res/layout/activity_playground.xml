@@ -10,206 +10,31 @@
     android:padding="16dp"
     tools:context=".PlaygroundActivity">
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtBienvenue"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/s01_bienvenue"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textColor="#1B7A3E" />-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/s01_horaires"-->
-<!--        android:textSize="24sp"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/s01_tarif"-->
-<!--        android:textSize="24sp"-->
-<!--        android:textStyle="bold"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:autoLink="web|phone|email"-->
-<!--        android:text="@string/s01_contact"-->
-<!--        android:textSize="22sp"/>-->
-
-<!--    &lt;!&ndash; Hint   &ndash;&gt;-->
-
-<!--    <EditText-->
-<!--        android:id="@+id/edtPrenom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:hint="Votre prenom"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <EditText-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Poste 3"-->
-<!--        android:inputType="text"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <Button-->
-<!--        android:id="@+id/btnEntrer"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Entrer"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/txtSalut"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <ImageView-->
-<!--        android:id="@+id/imgLogo"-->
-<!--        android:layout_width="160dp"-->
-<!--        android:layout_height="160dp"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:src="@drawable/s01_ic_poste"-->
-<!--        android:contentDescription="Logo du Cybercafe"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/txtInfo"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:text="@string/s01_bienvenue"-->
-<!--        android:textSize="26sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="#1B7A3E"/>-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Touchez la tasse pour commander"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <ImageView-->
-<!--        android:layout_width="140dp"-->
-<!--        android:layout_height="140dp"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:src="@drawable/s01_ic_cafe"-->
-<!--        android:contentDescription="Commander un cafe"-->
-<!--        android:onClick="commanderCafe"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/txtcommande"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <Button-->
-<!--        android:id="@+id/btnImprimer"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Imprimer (2 DH la page)"-->
-<!--        android:textSize="20sp"-->
-<!--        app:icon="@drawable/s01_ic_imprimer"/>-->
-
-<!--    <Button-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Scanner (bientot)"-->
-<!--        android:textSize="20sp"-->
-<!--        android:enabled="false"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/txtPages"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:textSize="22sp"/>-->
-<!--    <FrameLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:padding="24dp">-->
-<!--        <TextView-->
-<!--            android:id="@+id/txtClients"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Clients presents : 0"-->
-<!--            android:textSize="24sp"/>-->
-
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/fabNouveau"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom|end"-->
-<!--            android:layout_margin="16dp"-->
-<!--            android:src="@drawable/s01_ic_ajouter"-->
-<!--            android:contentDescription="Nouveau client"-->
-<!--            app:fabSize="normal"/>-->
-
-<!--    </FrameLayout>-->
-
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/s01_ic_poste"
-        android:contentDescription="@string/tp01_logo_description" />
-
-    <TextView
+    <CheckBox
+        android:id="@+id/chkImpression"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/s01_bienvenue"
-        android:textColor="@color/tp01_vert_alamal"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <TextView
+        android:text="Impression"
+        android:textSize="22sp"/>
+    <CheckBox
+        android:id="@+id/chkCasque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/tp01_horaires"
-        android:textSize="20sp" />
-
-    <TextView
+        android:text="Casque audio"
+        android:textSize="22sp"/>
+    <CheckBox
+        android:id="@+id/chkScanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
-        android:text="@string/s01_tarif"
-        android:textColor="@color/tp01_gris_texte"
-        android:textSize="16sp" />
-
-
-    <EditText
-        android:id="@+id/edtPrenom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="@string/tp01_hint_prenom"
-        android:inputType="textPersonName"
-        android:textSize="22sp" />
-
+        android:text="Scanner"
+        android:textSize="22sp"/>
     <Button
-        android:id="@+id/btnEntrer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tp01_btn_entrer"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/txtSalut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:textColor="@color/tp01_vert_fonce"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabNouveau"
+        android:id="@+id/btnCalculer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/s01_ic_ajouter"
-        android:contentDescription="Nouveau client"
-        app:fabSize="normal"/>
-    </FrameLayout>
+        android:text="Calculer"/>
+    <TextView
+        android:id="@+id/txtResultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

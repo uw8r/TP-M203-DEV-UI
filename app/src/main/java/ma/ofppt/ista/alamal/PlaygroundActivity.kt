@@ -1,8 +1,11 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
+import androidx.appcompat.view.ActionMode
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -56,20 +59,82 @@ class PlaygroundActivity : AppCompatActivity() {
 //            //vider le spinner et ecrire dans le text aucun poste choisit
 //            adapterSp02.clear()
 //        }
-    }
+//    }
+        //menu options
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        menuInflater.inflate(R.menu.s02_menu_principal, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        val txtMenu = findViewById<TextView>(R.id.txtMenu)
+//        when (item.itemId) {
+//            R.id.menu_tarifs -> txtMenu.text = "Le tarif est : 10dh / h"
+//            R.id.menu_aide -> txtMenu.text = "aide"
+//            R.id.menu_apropos -> txtMenu.text = "a propos"
+//        }
+//        return true
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.s02_menu_principal, menu)
-        return true
-    }
+        //fin
+        // menu contextuelle
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val txtMenu = findViewById<TextView>(R.id.txtMenu)
-        when (item.itemId) {
-            R.id.menu_tarifs -> txtMenu.text = "Le tarif est : 10dh / h"
-            R.id.menu_aide -> txtMenu.text = "aide"
-            R.id.menu_apropos -> txtMenu.text = "a propos"
+//        val txtPoste3 = findViewById<TextView>(R.id.txtPoste3)
+//        registerForContextMenu(txtPoste3)
+//
+//    }
+//    override fun onCreateContextMenu(
+//        menu: ContextMenu?,
+//        v: View?,
+//        menuInfo: ContextMenu.ContextMenuInfo?
+//    ) {
+//        menuInflater.inflate(R.menu.s02_menu_poste, menu)
+//    }
+//
+//    override fun onContextItemSelected(item: MenuItem): Boolean {
+//        val txtContexte = findViewById<TextView>(R.id.txtContexte)
+//        when (item.itemId) {
+//            R.id.poste_prolonger -> txtContexte.text = "Prolonger de 30 min"
+//            R.id.poste_liberer -> txtContexte.text = "Libérer le poste"
+//        }
+//        return true
+   //   fin
+        // menu d'actions contexteulle
+        val textRes = findViewById<TextView>(R.id.txtResa)
+        textRes.setOnLongClickListener {
+            startSupportActionMode(RapRes())
+            true
         }
-        return true
     }
 }
+class RapRes() : ActionMode.Callback {
+    override fun onActionItemClicked(
+        mode: ActionMode?,
+        item: MenuItem?
+    ): Boolean {
+        return false
+        // use find view by id in this section (you can't by default)
+    }
+
+    override fun onCreateActionMode(
+        mode: ActionMode?,
+        menu: Menu?
+    ): Boolean {
+        mode?.menuInflater?.inflate(R.menu.s02_menu_action, menu)
+        mode?.title = "1 reservation"
+        return true
+    }
+
+    override fun onDestroyActionMode(mode: ActionMode?) {
+        return
+    }
+
+    override fun onPrepareActionMode(
+        mode: ActionMode?,
+        menu: Menu?
+    ): Boolean {
+        return false
+    }
+
+}
+// casting entre les types de base
+// types de casting

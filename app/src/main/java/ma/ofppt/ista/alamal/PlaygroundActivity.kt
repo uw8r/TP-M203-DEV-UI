@@ -1,15 +1,13 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.CheckBox
-import android.widget.RadioButton
-import android.widget.RadioGroup
+import android.widget.Spinner
 import android.widget.TextView
-import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.materialswitch.MaterialSwitch
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
 // Écrivez le layout dans res/layout/activity_playground.xml et le code Kotlin ci-dessous, dans onCreate.
@@ -19,24 +17,48 @@ class PlaygroundActivity : AppCompatActivity() {
         setContentView(R.layout.activity_playground)
 
         // Votre code ici
-        val tglClim = findViewById<ToggleButton>(R.id.tglClim)
-        val swSilence = findViewById<MaterialSwitch>(R.id.swSilence)
-        val txtEtat = findViewById<TextView>(R.id.txtEtat)
-        tglClim.setOnCheckedChangeListener { _, bool ->
-            if (bool) {
-                txtEtat.text = "Clim ON !!"
-            } else {
-                txtEtat.text = "Clim OFF !!"
+        val spPoste = findViewById<Spinner>(R.id.spPoste)
+        val txtPoste = findViewById<TextView>(R.id.txtPoste)
+
+
+        spPoste.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                txtPoste.text = parent?.getItemAtPosition(position).toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+        val spPosteCode = findViewById<Spinner>(R.id.spPosteCode)
+        val txtPosteCode = findViewById<TextView>(R.id.txtPosteCode)
+        val btnVider = findViewById<Button>(R.id.btnVider)
+
+        val mutableList = mutableListOf<String>("poste 01", "poste 02", "poste 03")
+        val adapterSp02 =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mutableList)
+        spPosteCode.adapter = adapterSp02
+        // le text view doit afficher le poste choisit
+        spPosteCode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                txtPosteCode.text = parent?.getItemAtPosition(position).toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                txtPosteCode.text = "Aucun poste choisi"
             }
         }
-
-        swSilence.setOnCheckedChangeListener { _, bool ->
-            if (bool) {
-                txtEtat.text = "Mode silencieux ON !!"
-            } else {
-                txtEtat.text = "Mode silencieux OFF !!"
-            }
+        btnVider.setOnClickListener {
+            //vider le spinner et ecrire dans le text aucun poste choisit
+            adapterSp02.clear()
         }
-
     }
 }

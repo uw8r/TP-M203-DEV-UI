@@ -1,11 +1,8 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,48 +14,62 @@ class PlaygroundActivity : AppCompatActivity() {
         setContentView(R.layout.activity_playground)
 
         // Votre code ici
-        val spPoste = findViewById<Spinner>(R.id.spPoste)
-        val txtPoste = findViewById<TextView>(R.id.txtPoste)
+//        val spPoste = findViewById<Spinner>(R.id.spPoste)
+//        val txtPoste = findViewById<TextView>(R.id.txtPoste)
+//
+//
+//        spPoste.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                txtPoste.text = parent?.getItemAtPosition(position).toString()
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {}
+//        }
+//        val spPosteCode = findViewById<Spinner>(R.id.spPosteCode)
+//        val txtPosteCode = findViewById<TextView>(R.id.txtPosteCode)
+//        val btnVider = findViewById<Button>(R.id.btnVider)
+//
+//        val mutableList = mutableListOf<String>("poste 01", "poste 02", "poste 03")
+//        val adapterSp02 = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mutableList)
+//        spPosteCode.adapter = adapterSp02
+//        // le text view doit afficher le poste choisit
+//        spPosteCode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                txtPosteCode.text = parent?.getItemAtPosition(position).toString()
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                txtPosteCode.text = "Aucun poste choisi"
+//            }
+//        }
+//        btnVider.setOnClickListener {
+//            //vider le spinner et ecrire dans le text aucun poste choisit
+//            adapterSp02.clear()
+//        }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.s02_menu_principal, menu)
+        return true
+    }
 
-        spPoste.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                txtPoste.text = parent?.getItemAtPosition(position).toString()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val txtMenu = findViewById<TextView>(R.id.txtMenu)
+        when (item.itemId) {
+            R.id.menu_tarifs -> txtMenu.text = "Le tarif est : 10dh / h"
+            R.id.menu_aide -> txtMenu.text = "aide"
+            R.id.menu_apropos -> txtMenu.text = "a propos"
         }
-        val spPosteCode = findViewById<Spinner>(R.id.spPosteCode)
-        val txtPosteCode = findViewById<TextView>(R.id.txtPosteCode)
-        val btnVider = findViewById<Button>(R.id.btnVider)
-
-        val mutableList = mutableListOf<String>("poste 01", "poste 02", "poste 03")
-        val adapterSp02 =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mutableList)
-        spPosteCode.adapter = adapterSp02
-        // le text view doit afficher le poste choisit
-        spPosteCode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                txtPosteCode.text = parent?.getItemAtPosition(position).toString()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                txtPosteCode.text = "Aucun poste choisi"
-            }
-        }
-        btnVider.setOnClickListener {
-            //vider le spinner et ecrire dans le text aucun poste choisit
-            adapterSp02.clear()
-        }
+        return true
     }
 }

@@ -8,51 +8,58 @@
     android:padding="16dp"
     tools:context=".PlaygroundActivity">
 
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Poste souhaite"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <Spinner-->
+    <!--        android:id="@+id/spPoste"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:entries="@array/s02_postes"-->
+    <!--        android:minHeight="56dp" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/txtPoste"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="22sp" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:text="Poste (liste remplie par le code)"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <Spinner-->
+    <!--        android:id="@+id/spPosteCode"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:minHeight="56dp" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/txtPosteCode"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="22sp" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btnVider"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Vider la liste" />-->
+
     <TextView
+        android:id="@+id/txtMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Poste souhaite"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spPoste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/s02_postes"
-        android:minHeight="56dp" />
-
-    <TextView
-        android:id="@+id/txtPoste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Toucher les 3 points pour selectionner une option"
         android:textSize="22sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Poste (liste remplie par le code)"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spPosteCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="56dp" />
-
-    <TextView
-        android:id="@+id/txtPosteCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp" />
-
-    <Button
-        android:id="@+id/btnVider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vider la liste" />
 
 
 </LinearLayout>

@@ -1,13 +1,11 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
-import androidx.appcompat.view.ActionMode
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ActionMode
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
 // Écrivez le layout dans res/layout/activity_playground.xml et le code Kotlin ci-dessous, dans onCreate.
@@ -97,22 +95,27 @@ class PlaygroundActivity : AppCompatActivity() {
 //            R.id.poste_liberer -> txtContexte.text = "Libérer le poste"
 //        }
 //        return true
-   //   fin
+        //   fin
         // menu d'actions contexteulle
         val textRes = findViewById<TextView>(R.id.txtResa)
+        val txtContexte = findViewById<TextView>(R.id.txtAction)
         textRes.setOnLongClickListener {
-            startSupportActionMode(RapRes())
+            startSupportActionMode(RapRes(textRes, txtContexte))
+            //on selectionner le text de reservation
             true
         }
     }
 }
-class RapRes() : ActionMode.Callback {
-    override fun onActionItemClicked(
-        mode: ActionMode?,
-        item: MenuItem?
-    ): Boolean {
-        return false
-        // use find view by id in this section (you can't by default)
+
+class RapRes(val textRes: TextView, val txtContexte: TextView) : ActionMode.Callback {
+    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+
+        when (item?.itemId) {
+            R.id.action_partager -> txtContexte.text = "${item.title}"
+            R.id.action_supprimer -> txtContexte.text = "${item.title}"
+        }
+        mode?.finish()
+        return true
     }
 
     override fun onCreateActionMode(
@@ -132,6 +135,7 @@ class RapRes() : ActionMode.Callback {
         mode: ActionMode?,
         menu: Menu?
     ): Boolean {
+        //unselect le text
         return false
     }
 

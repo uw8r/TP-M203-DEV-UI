@@ -1,11 +1,10 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.widget.ImageButton
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.ActionMode
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
 // Écrivez le layout dans res/layout/activity_playground.xml et le code Kotlin ci-dessous, dans onCreate.
@@ -96,49 +95,68 @@ class PlaygroundActivity : AppCompatActivity() {
 //        }
 //        return true
         //   fin
-        // menu d'actions contexteulle
-        val textRes = findViewById<TextView>(R.id.txtResa)
-        val txtContexte = findViewById<TextView>(R.id.txtAction)
-        textRes.setOnLongClickListener {
-            startSupportActionMode(RapRes(textRes, txtContexte))
-            //on selectionner le text de reservation
-            true
+        // menu d'actions contexteulle etape 7
+//        val textRes = findViewById<TextView>(R.id.txtResa)
+//        val txtContexte = findViewById<TextView>(R.id.txtAction)
+//        textRes.setOnLongClickListener {
+//            startSupportActionMode(RapRes(textRes, txtContexte))
+//            //on selectionner le text de reservation
+//            true
+//        }
+        //fin
+
+        // etape 8 : popup menu
+
+        val btn = findViewById<ImageButton>(R.id.btnPlus)
+        val txtPopup = findViewById<TextView>(R.id.txtPopup)
+        btn.setOnClickListener {
+            val popup = PopupMenu(this@PlaygroundActivity, btn)
+            popup.menuInflater.inflate(R.menu.s02_menu_popup, popup.menu)
+            popup.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.popup_message -> txtPopup.text = "${it.title}"
+                    R.id.popup_ticket -> txtPopup.text = "${it.title}"
+                }
+                true
+            }
+            popup.show()
         }
     }
 }
-
-class RapRes(val textRes: TextView, val txtContexte: TextView) : ActionMode.Callback {
-    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
-
-        when (item?.itemId) {
-            R.id.action_partager -> txtContexte.text = "${item.title}"
-            R.id.action_supprimer -> txtContexte.text = "${item.title}"
-        }
-        mode?.finish()
-        return true
-    }
-
-    override fun onCreateActionMode(
-        mode: ActionMode?,
-        menu: Menu?
-    ): Boolean {
-        mode?.menuInflater?.inflate(R.menu.s02_menu_action, menu)
-        mode?.title = "1 reservation"
-        return true
-    }
-
-    override fun onDestroyActionMode(mode: ActionMode?) {
-        return
-    }
-
-    override fun onPrepareActionMode(
-        mode: ActionMode?,
-        menu: Menu?
-    ): Boolean {
-        //unselect le text
-        return false
-    }
-
-}
+////etape 7
+//class RapRes(val textRes: TextView, val txtContexte: TextView) : ActionMode.Callback {
+//    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+//
+//        when (item?.itemId) {
+//            R.id.action_partager -> txtContexte.text = "${item.title}"
+//            R.id.action_supprimer -> txtContexte.text = "${item.title}"
+//        }
+//        mode?.finish()
+//        return true
+//    }
+//
+//    override fun onCreateActionMode(
+//        mode: ActionMode?,
+//        menu: Menu?
+//    ): Boolean {
+//        mode?.menuInflater?.inflate(R.menu.s02_menu_action, menu)
+//        mode?.title = "1 reservation"
+//        return true
+//    }
+//
+//    override fun onDestroyActionMode(mode: ActionMode?) {
+//        return
+//    }
+//
+//    override fun onPrepareActionMode(
+//        mode: ActionMode?,
+//        menu: Menu?
+//    ): Boolean {
+//        //unselect le text
+//        return false
+//    }
+//
+//}
+// fin etape 7
 // casting entre les types de base
 // types de casting

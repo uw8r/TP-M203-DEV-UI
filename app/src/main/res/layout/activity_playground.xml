@@ -148,7 +148,19 @@
     <!--        android:text="Post3 (busy)"/>-->
     <!--        date picker dialog-->
 
+    <!--    etape 10 : dateDialog-->
+    <Button
+        android:id="@+id/btnDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="selectionner une date"
+        android:textSize="22sp" />
 
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="selectionner une date" />
 
 
 </LinearLayout>

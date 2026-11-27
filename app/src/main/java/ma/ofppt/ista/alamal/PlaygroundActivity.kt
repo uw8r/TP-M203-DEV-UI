@@ -140,7 +140,19 @@ class PlaygroundActivity : AppCompatActivity() {
 //                }
 //                alert.show()
 //        }
+        val btn = findViewById<Button>(R.id.btnDate)
+        val txtBtn = findViewById<TextView>(R.id.txtDate)
 
+        btn.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val annee = cal.get(Calendar.YEAR)
+            val mois = cal.get(Calendar.MONTH)
+            val jour = cal.get(Calendar.DAY_OF_MONTH)
+
+            DatePickerDialog(this, { _, y, m, d ->
+                txtBtn.text = "date selectionner : $d/${m + 1}/$y"
+            }, annee, mois, jour).show()
+        }
 
     }
 }

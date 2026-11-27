@@ -1,10 +1,11 @@
 package ma.ofppt.ista.alamal
 
+import android.app.DatePickerDialog
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.PopupMenu
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Calendar
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
 // Écrivez le layout dans res/layout/activity_playground.xml et le code Kotlin ci-dessous, dans onCreate.
@@ -107,20 +108,40 @@ class PlaygroundActivity : AppCompatActivity() {
 
         // etape 8 : popup menu
 
-        val btn = findViewById<ImageButton>(R.id.btnPlus)
-        val txtPopup = findViewById<TextView>(R.id.txtPopup)
-        btn.setOnClickListener {
-            val popup = PopupMenu(this@PlaygroundActivity, btn)
-            popup.menuInflater.inflate(R.menu.s02_menu_popup, popup.menu)
-            popup.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.popup_message -> txtPopup.text = "${it.title}"
-                    R.id.popup_ticket -> txtPopup.text = "${it.title}"
-                }
-                true
-            }
-            popup.show()
-        }
+//        val btn = findViewById<ImageButton>(R.id.btnPlus)
+//        val txtPopup = findViewById<TextView>(R.id.txtPopup)
+//        btn.setOnClickListener {
+//            val popup = PopupMenu(this@PlaygroundActivity, btn)
+//            popup.menuInflater.inflate(R.menu.s02_menu_popup, popup.menu)
+//            popup.setOnMenuItemClickListener {
+//                when (it.itemId) {
+//                    R.id.popup_message -> txtPopup.text = "${it.title}"
+//                    R.id.popup_ticket -> txtPopup.text = "${it.title}"
+//                }
+//                true
+//            }
+//            popup.show()
+//        }
+        //etape 9
+//        val btn = findViewById<Button>(R.id.btnDialog)
+//        val txtBtn = findViewById<TextView>(R.id.txtDialog)
+//        btn.setOnClickListener {
+//            val alert = AlertDialog.Builder(this)
+//                alert.setTitle("Liberer le poste 3 ?")
+//                alert.setMessage("La session de Yassine sera fermée.")
+//                alert.setPositiveButton("Oui") { _, _ ->
+//                    txtBtn.text = "Poste 3 Libre !!"
+//                }
+//                alert.setNegativeButton("Non") { _, _ ->
+//                    txtBtn.text = "Poste 3 est toujours occupé !!"
+//                }
+//                alert.setNeutralButton("Plus tard") { _, _ ->
+//                    txtBtn.text = "Poste 3 est toujours occupé : Rien nest specifié !!"
+//                }
+//                alert.show()
+//        }
+
+
     }
 }
 ////etape 7
